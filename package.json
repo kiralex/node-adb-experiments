@@ -1,0 +1,21 @@
+{
+  "name": "adb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "babel-node": "DEBUG='kiralex.adb.*' babel-node --harmony src/index.js",
+    "start": "nodemon --exec npm run babel-node",
+    "build": "babel src -d lib"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "dependencies": {
+    "appium-adb": "^5.2.0",
+    "debug": "^3.1.0",
+    "nodemon": "^1.12.1"
+  }
+}
