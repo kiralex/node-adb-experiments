@@ -6,7 +6,12 @@ const debug = d('kiralex.adb.index');
 const func = async () => {
   debug('func');
   const adb = await ADB.createADB();
-  debug(await adb.shell('getprop ro.product.model'));
+  try {
+    await adb.waitForDevice();
+    debug(await adb.shell('getprop ro.product.model'));
+  } catch (err) {
+    debug(err.message);
+  }
 };
 
 //zezess
